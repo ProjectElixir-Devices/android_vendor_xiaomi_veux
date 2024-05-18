@@ -8,6 +8,40 @@ soong_namespace {
 }
 
 android_app_import {
+	name: "MiuiCamera",
+	owner: "xiaomi",
+	apk: "proprietary/system/priv-app/MiuiCamera/MiuiCamera.apk",
+	overrides: ["Snap", "Camera2", "Aperture"],
+	certificate: "platform",
+        system_ext_specific: true,
+        required: [
+        "privapp-permissions-miuicamera.xml",
+        ],
+	privileged: true,
+	dex_preopt: {
+		enabled: false,
+},
+
+
+    optional_uses_libs: [
+        "libSNPE.so",
+        "libOpenCL.so",
+        "libcdsprpc.so",
+        "libmialgo_ai_vision.so",
+        "libxmi_slow_motion_mein.so",
+        "libmialgo_utils.so",
+        "libmiocr.so",
+        "libcamera_ispinterface_jni.xiaomi.so",
+        "libcamera_algoup_jni.xiaomi.so",
+        "libcamera_imagecodec_jni.xiaomi.so",
+        "libcamera_jpegutil_jni.xiaomi.so",
+        "libneuron_adapter_mgvi.so",
+        "libneuron_adapter.so",
+        "libneuronusdk_adapter.mtk.so",
+    ],
+}
+
+android_app_import {
 	name: "CACertService",
 	owner: "xiaomi",
 	apk: "proprietary/vendor/app/CACertService/CACertService.apk",

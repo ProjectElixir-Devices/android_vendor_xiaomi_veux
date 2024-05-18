@@ -1387,6 +1387,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/veux/proprietary/vendor/lib64/vendor.silead.hardware.fingerprintext@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.silead.hardware.fingerprintext@1.0.so
 
 PRODUCT_PACKAGES += \
+    MiuiCamera \
     CACertService \
     CneApp \
     IWlanService \
@@ -1412,3 +1413,6 @@ PRODUCT_PACKAGES += \
     manifest_vendor.xiaomi.hardware.mlipay \
     vendor.qti.diag.hal.service \
     vendor.qti.gnss@4.0-service
+
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    MiuiCamera
